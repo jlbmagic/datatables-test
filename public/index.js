@@ -35,7 +35,7 @@ window.loadData = function (json) {
   if (table) table.destroy();
   table = $("#example").DataTable({
     paging: true,
-    searching: false,
+    searching: true,
     scrollY: "536",
     colReorder: true,
     columns: columns,
