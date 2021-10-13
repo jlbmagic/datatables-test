@@ -3,7 +3,15 @@ import "./style.css";
 import "regenerator-runtime/runtime.js";
 
 var table;
-
+const newHeaders = {
+  Account_Name: "Account Name",
+  Name_First: "First Name",
+  Name_Last: "Last Name",
+  _id_Staff: "Staff ID",
+  CompanyName: "Company",
+  ModifiedTimeStamp: "Last Edited",
+  StreetAddress: "Address",
+};
 // exposing loadData to FileMaker Script
 window.loadData = function (json) {
   var obj = JSON.parse(json); // data from FM is a string
@@ -17,7 +25,7 @@ window.loadData = function (json) {
     var visible = true;
     if (key === "Id") visible = false;
     return {
-      title: key,
+      title: newHeaders[key] || key,
       data: "fieldData." + key,
       visible: visible,
     };
